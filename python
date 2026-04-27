@@ -1,0 +1,24 @@
+```mermaid
+classDiagram
+
+class Equipamento {
+    -tag: str
+    -descricao: str
+    -ativo: bool
+
+    +__init__(tag: str, descricao: str, ativo: bool)
+    +ligar() 
+    +desligar() 
+    +exibir_resumo() 
+}
+
+class SensorTemperatura {
+    -valor_atual: float
+
+    +__init__(tag: str, descricao: str, ativo: bool, valor_inicial: float)
+    +atualizar_leitura(novo_valor: float)
+    +get_valor_atual() float
+    +exibir_resumo()
+}
+
+Equipamento <|-- SensorTemperatura
